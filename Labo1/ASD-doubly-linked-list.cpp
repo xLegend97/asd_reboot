@@ -106,11 +106,9 @@ void list::set(int pos, Elem e, const List& l)        /* modifica l'elemento in 
 
 void list::add(int pos, Elem e, const List& l)        /* inserisce l'elemento in posizione pos, shiftando a destra gli altri elementi */
 {              
-    if(pos > size(l)){
-        return;
-    }if(pos == 0){
+    if(pos == 0){
         addFront(e, l);
-    }if(pos == size(l)){
+    }else if((pos == size(l)) || (pos > size(l))){
         addRear(e, l);
     }else{
         int n = 0;
@@ -122,7 +120,7 @@ void list::add(int pos, Elem e, const List& l)        /* inserisce l'elemento in
             cur = cur->next;
         }
         aux->next = cur;
-        aux->prev = cur->prev->next;
+        aux->prev = cur->prev;
         cur->prev->next = aux;
         cur->prev = aux;
     }
