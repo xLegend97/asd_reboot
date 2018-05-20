@@ -5,18 +5,18 @@
 
 using namespace std;
 
-// Implementa QUEUE con strutture indicizzate e tipo base Elem dotato di ordinamento
+// Implementa QUEUE con array dinamico e tipo base Elem dotato di ordinamento
  
 namespace queue{
 
 const int BLOCKDIM = 1000;
 typedef int Elem;      // tipo base 
-
-typedef struct {
+struct queue{
     Elem* queue;
     int size;
     int maxsize;
-} Queue;
+};
+typedef queue Queue;
 
 const int FINEINPUT = -1000000;
 const int EMPTYELEM = -1000000;
