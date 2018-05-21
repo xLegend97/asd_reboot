@@ -11,12 +11,11 @@ namespace queue{
 
 const int BLOCKDIM = 1000;
 typedef int Elem;      // tipo base 
-struct queue{
+typedef struct {
     Elem* queue;
     int size;
     int maxsize;
-};
-typedef queue Queue;
+} Queue;
 
 const int FINEINPUT = -1000000;
 const int EMPTYELEM = -1000000;
