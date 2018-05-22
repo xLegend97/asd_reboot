@@ -29,14 +29,18 @@ using std::ostringstream;
 
 // da stringa a numero
 int str2int(const string &s) {
-  // DA IMPLEMENTARE
-  return 0;
+  int n;
+  istringstream iss(s);
+  iss >> n; 
+  return n;
 }
 
 // da numero a stringa
 string int2str(int n) {
-  // DA IMPLEMENTARE
-  return "";
+  ostringstream oss;
+  oss << n;
+  string s = oss.str();
+  return s;
 }
 
 // ritorna false se e solo se token di tipo sconosciuto o se stringa vuota.
@@ -44,7 +48,6 @@ string int2str(int n) {
 // che diventa token.
 
 bool prossimoToken(string &s, token &t) {
-  // DA IMPLEMENTARE
   return false;
 }
 
