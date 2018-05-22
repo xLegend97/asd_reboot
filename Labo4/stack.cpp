@@ -5,21 +5,26 @@ using namespace stack;
 /****************************************************************/
 bool stack::isEmpty(const Stack& s)
 {
-    // DA IMPLEMENTARE
-    return true;
+    return (s == EMPTYSTACK);
 }
 
 /****************************************************************/
 void stack::push(const Elem x, Stack& s) 
 {
-    // DA IMPLEMENTARE
+    cell* aux = new cell;
+    aux->info = x;
+    if(isEmpty(s)){ aux->next = EMPTYSTACK; 
+    } else { aux->next = s; }
+    s = aux;
 }
 
 /****************************************************************/
 Elem stack::pop(Stack& s)
 {
-    // DA IMPLEMENTARE
-    Elem e;
+    Elem e = s->info;
+    Stack tmp = s;
+    s = s->next;
+    delete tmp;
     return e;
 }
 

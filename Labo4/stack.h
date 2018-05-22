@@ -13,7 +13,12 @@ namespace stack{
 // Gli elementi dello STACK sono token
 typedef token Elem;
 
-typedef int Stack; // Definizione di Stack fasulla. MODIFICARE!
+struct cell{
+    Elem info;
+    cell* next;
+};
+typedef cell* Stack;    // Simple-linked list
+const Stack EMPTYSTACK = NULL;
 
 bool isEmpty(const Stack&);
 void push(const Elem, Stack&);	/* aggiunge elem in cima (operazione safe, si può sempre fare) */

@@ -10,23 +10,30 @@ using namespace queue;
 /****************************************************************/
 void queue::enqueue(Elem e, Queue& l) // aggiunge e in coda
 {
-   // DA IMPLEMENTARE
+  cell* aux = new cell;
+  aux->info = e;
+  aux->prev = l->prev;
+  aux->next = l;
+  l->prev = aux;
 }
 
 
 /****************************************************************/
 Elem queue::dequeue(Queue& l) // rimuove il primo elemento e lo restituisce
 {
-   // DA IMPLEMENTARE
-   Elem e;
-   return e;
+  Elem t;
+  t = l->next->info;
+  Queue tmp = l->next;
+  l->next = l->next->next;
+  l->next->next->prev = l;
+  delete tmp;
+  return t;
 }
 
 /****************************************************************/
 bool queue::isEmpty(const Queue& l)
 {
-  // DA IMPLEMENTARE 
-  return true;
+  return (l->next == l);
 }
 
 /****************************************************************/
