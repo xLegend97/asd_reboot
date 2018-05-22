@@ -12,27 +12,48 @@ struct stack::cell {
 /****************************************************************/
 bool stack::isEmpty(const Stack& s)
 {
-return true;
+    return (s == EMPTYSTACK);
 }
 
 
 /****************************************************************/
 void stack::push(const Elem x, Stack& s) 
 {
-    return;
+    cell* aux = new cell;
+    aux->elem = x;
+    if(isEmpty(s)){
+        aux->next = EMPTYSTACK;
+        s = aux;
+    }else{
+        aux->next = s;
+        s = aux;
+    }
 }
 
 /****************************************************************/
 Elem stack::pop(Stack& s)
 {
-    return EMPTYELEM;
+    if(isEmpty(s)){
+        return EMPTYELEM;
+    }else{
+        Stack tmp = s;
+        Elem e = tmp->elem;
+        s = s->next;
+        delete tmp;
+        return e;
+    }
 }
 
 
 /****************************************************************/
 Elem stack::top(Stack& s)
 {
-    return EMPTYELEM;
+    if(isEmpty(s)){
+        return EMPTYELEM;
+    }else{
+        Elem e = s->elem;
+        return e;
+    }
 }
 
 
