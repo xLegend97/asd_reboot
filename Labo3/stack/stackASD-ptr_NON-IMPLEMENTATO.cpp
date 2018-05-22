@@ -80,7 +80,7 @@ Stack readFromStream(istream& str)
     Elem e;
     str>>e;
     if (!str) throw runtime_error("Errore inserimento dati\n");
-    while (e!= FINEINPUT)  // assumiamo che il segnale di fine input nel file sia il numero  FINEINPUT
+    while (e!= FINEINPUT)  //assumiamo che il segnale di fine input nel file sia il numero  FINEINPUT
     {
     push(e, s);
     str>>e;
