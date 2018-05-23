@@ -21,11 +21,15 @@ void stack::push(const Elem x, Stack& s)
 /****************************************************************/
 Elem stack::pop(Stack& s)
 {
-    Elem e = s->info;
-    Stack tmp = s;
-    s = s->next;
-    delete tmp;
-    return e;
+    if(isEmpty(s)){
+        throw ("The Stack is Empty!");
+    }else{
+        Elem e = s->info;
+        Stack tmp = s;
+        s = s->next;
+        delete tmp;
+        return e;    
+    }
 }
 
 /****************************************************************/

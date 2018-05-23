@@ -65,8 +65,8 @@ bool prossimoToken(string &s, token &t) {
         default: { t.k = SCONOSCIUTO; }
       }
     }
-    std::cerr << "\nTOKEN VALUE: " << t.val << std::endl;
-    std::cerr << "\nTYPE: " << t.k << std::endl;
+    //std::cerr << "\nTOKEN VALUE: " << t.val << std::endl;
+    //std::cerr << "\nTYPE: " << t.k << std::endl;
     int n = s.find(" ", 0);
     string ns = s.substr(n, (s.size() - n));
     s.erase(0, s.size());

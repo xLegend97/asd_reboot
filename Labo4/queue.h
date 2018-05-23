@@ -14,10 +14,10 @@ typedef token Elem;
 
 struct cell{
     Elem info;
-    cell* prev;
     cell* next;
 };
-typedef cell* Queue;    // Double-linked list with sentinell
+typedef cell* Queue;    // Simply-linked list 
+const Queue EMPTYQUEUE = NULL;
 
 bool isEmpty(const Queue&);
 void enqueue(Elem, Queue&);  /* inserisce l'elemento alla fine della lista */
